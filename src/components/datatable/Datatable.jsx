@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "./datatableData";
@@ -6,6 +6,18 @@ import { Link } from "react-router-dom";
 
 function Datatable({ title }) {
   const newlink = title.split(" ")[2].toLowerCase(); //get user or product
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    if (newlink === "user") {
+      setData(userRows);
+    }
+  }, []);
+
+  const handleDelete = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
 
   const actionColumn = [
     {
@@ -21,7 +33,12 @@ function Datatable({ title }) {
             >
               <div className="viewButton">View</div>
             </Link>
-            <div className="deleteButton">Deleted</div>
+            <div
+              className="deleteButton"
+              onClick={() => handleDelete(params?.row?.id)}
+            >
+              Deleted
+            </div>
           </div>
         );
       },
@@ -37,7 +54,7 @@ function Datatable({ title }) {
       </div>
       <DataGrid
         className="datagrid"
-        rows={userRows}
+        rows={data}
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
