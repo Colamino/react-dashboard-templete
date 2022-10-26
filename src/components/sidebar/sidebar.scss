@@ -1,0 +1,144 @@
+.sidebar {
+  flex: 1;
+  border-right: 0.5px solid rgb(230, 227, 277);
+  min-height: 100vh;
+  background-color: white;
+
+
+  .top {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .app {
+      display: none;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: purple;
+    }
+
+    
+  }
+
+  hr {
+    height: 0;
+    border: 0.5px solid rgb(230, 227, 277);
+    margin: 0;
+  }
+
+  .center {
+    padding-left: 10px;
+
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .title {
+        font-size: 10px;
+        font-weight: bold;
+        color: #999;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        gap: 10px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #ece8ff;
+        }
+
+        .icon {
+          font-size: 18px;
+          color: #7451f8;
+        }
+
+        span {
+          font-size: 13px;
+          font-weight: 600;
+          color: #888;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: block;
+    align-items: center;
+    margin: 10px;
+
+    .title{
+      font-size: 10px;
+        font-weight: bold;
+        color: #999;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        
+    }
+
+    .theme {
+      display: flex;
+
+      .colorOption {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid #7451f8;
+        cursor: pointer;
+        margin: 5px;
+  
+        &:nth-child(1){
+          background-color: white;
+        }
+        &:nth-child(2){
+          background-color: rgb(47, 45, 45);
+        }
+        &:nth-child(3){
+          background-color: darkblue;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+  
+
+    .top {
+      height: 35px;
+      .logo {
+        display: none;
+      }
+
+      .app {
+        display: block;
+      }
+    }
+
+    .center {
+    
+      justify-content: center;
+      align-items: center;
+      span {
+        display: none;
+      }
+
+      
+    }
+
+    .bottom {
+      .theme {
+        display: block;
+      }
+    }
+  }
+}
+

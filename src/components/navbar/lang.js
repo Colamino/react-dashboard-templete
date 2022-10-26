@@ -1,0 +1,16 @@
+export const lang = [
+  "Afrikaans",
+  "Albanian",
+  "Amharic",
+  "Arabic",
+  "Armenian",
+  "Azerbaijani",
+  "Bangla",
+  "Basque",
+  "Chinese (Simplified)",
+  " Chinese (Traditional)",
+  "English",
+  "Malay",
+  "Malayalam",
+  "Thai",
+];
